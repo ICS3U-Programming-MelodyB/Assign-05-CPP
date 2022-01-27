@@ -13,12 +13,12 @@
 // Function for area of a cylinder
 float CalcAreaCylinder(float radius, float height) {
     float area1, area2, area3, area4, area5, area6, area;
-    area1 = 2.0 * M_PI;
+    area1 = 2 * M_PI;
     area2 = radius * height;
-    area3 = area1 + area2;
-    area4 = 2.0 * M_PI;
-    area5 = pow(radius, 2.0);
-    area6 = area4 + area5;
+    area3 = area1 * area2;
+    area4 = 2 * M_PI;
+    area5 = pow(radius, 2);
+    area6 = area4 * area5;
     area = area3 + area6;
     return area;
 }
@@ -72,7 +72,7 @@ int main() {
             if (radiusUserFloat <= 0) {
                 std::cout << "Please enter a number greater than 0!";
                 std::cout << "" << std::endl;
-                std::cout << "Please enter a valid height";
+                std::cout << "Please enter a valid height\n";
                 continue;
             } else {
                 std::string heightUser;
@@ -85,7 +85,7 @@ int main() {
                     if (heightUserFloat <= 0) {
                         std::cout << "Please enter a number greater than 0!";
                         std::cout << "" << std::endl;
-                        std::cout << "Please enter a valid height";
+                        std::cout << "Please enter a valid height\n";
                         // goes back to the top of the while true loop
                         continue;
                     } else {
@@ -101,10 +101,10 @@ int main() {
                             coneVolUser = CalcVolCone\
                                           (radiusUserFloat, heightUserFloat);
                             std::cout << "" << std::endl;
-                            std::cout << "The surface of the cone is ";
-                            std::cout << coneAreaUser << units << "\n";
-                            std::cout << "The volume of the cone is ";
-                            std::cout << coneVolUser << units;
+                            std::cout << "The surface of the cone is " << std::fixed;
+                            std::cout << std::setprecision(2) << coneAreaUser << units << "\n";
+                            std::cout << "The volume of the cone is " << std::fixed;
+                            std::cout << std::setprecision(2) << coneVolUser << units;
                             std::cout << "" << std::endl;
                             std::string askAgain;
                             std::cout << "Would you like to play again(y/n)?: ";
@@ -126,10 +126,10 @@ int main() {
                                               (radiusUserFloat, \
                                                 heightUserFloat);
                             std::cout << "" << std::endl;
-                            std::cout << "The surface of the cylinder is ";
-                            std::cout << cylinderAreaUser << units << "\n";
-                            std::cout << "The volume of the cylinder is ";
-                            std::cout << cylinderVolUser << units << "\n";
+                            std::cout << "The surface of the cylinder is " << std::fixed;
+                            std::cout << std::setprecision(2) << cylinderAreaUser << units << "\n";
+                            std::cout << "The volume of the cylinder is " << std::fixed;
+                            std::cout << std::setprecision(2) << cylinderVolUser << units << "\n";
                             std::cout << "" << std::endl;
                             std::string askAgain;
                             std::cout << "Would you like to play again(y/n)?: ";
